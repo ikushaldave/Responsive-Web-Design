@@ -1,0 +1,497 @@
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ====================================
+    Globals
+===================================== */
+
+:root {
+    --skyblue-bg: hsl(216,100%,94%);
+    --blue-bg: hsl(228,56%,31%);
+    --dark-blue-color: hsl(229,74%,24%);
+    --primary-color: hsl(348,95%,56%);
+    --paragraph-color: hsl(249,3%,43%);
+    --primary-font: 'IBM Plex Sans', sans-serif;
+    --secondary-font: 'Balsamiq Sans', cursive;
+    font-size: 16px;
+    color: #000;
+}
+
+body {
+    font: 500 16px/1.5 sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-50 {
+    flex: 0 1 48%;
+}
+
+.col-1-3 {
+    flex: 0 1 30%;
+}
+
+.col-1-4 {
+    flex: 0 1 23%;
+}
+
+.ptb-1 {
+    padding: 1rem 0;
+}
+
+.ptb-2 {
+    padding: 2rem 0;
+}
+
+.ptb-3 {
+    padding: 3.5rem 0;
+}
+
+.pt-5 {
+    padding-top: 5rem;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ====================================
+    Typography
+===================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.num-box,
+time {
+    font-family: var(--secondary-font);
+    font-weight: 800;
+}
+
+h1,
+h2 {
+    font-size: 3rem;
+}
+
+h3,
+h4,
+h5,
+.num-box {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+    color: rgba(0, 0, 0, 0.8)
+}
+
+.hero-heading-highlight {
+    color: var(--primary-color);
+}
+
+
+/* ====================================
+    Links
+===================================== */
+
+a {
+    font-size: 1.25rem;
+    font-family: var(--primary-font);
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.nav-item a {
+    text-transform: uppercase;
+}
+
+.read-more {
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    text-decoration: underline;
+    color: #000;
+}
+
+.read-more-active {
+    color: var(--primary-color);
+}
+
+/* ====================================
+    Buttons
+===================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.6em 1.6rem;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+a.nav-btn {
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+/* ====================================
+    Header
+===================================== */
+
+.header {
+    background: linear-gradient(to right, hsl(248,65%,40%, 0.6), hsl(248,65%,40%,0.8)), url(../images/01.png) 0 0 no-repeat;
+    background-size: cover;
+}
+
+.hamberger-menu {
+    display: none;
+}
+
+.nav-item {
+    margin-left: 1.8rem;
+}
+
+.hero-text {
+    color: #fff;
+}
+
+.hero-text p {
+    margin: 2.5rem 0;
+    color: rgb(255, 255, 255);
+    font-size: 1.35rem;
+}
+
+.hero-image {
+    text-align: right;
+}
+
+.hero-image img {
+    width: 100%;
+}
+
+/* ====================================
+    Main
+===================================== */
+
+.about-img img {
+    width: 100%;
+}
+
+.about-text h2 {
+    text-transform: uppercase;
+}
+
+.about-text p {
+    margin: 1.5rem 0;
+    font-size: 1.35rem;
+}
+
+.why-choose-us {
+    background-color: var(--skyblue-bg);
+}
+
+.box {
+    border: 3px dashed var(--primary-color);
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.num-box {
+    padding: 0 1.5rem;
+    color: var(--primary-color);
+    background-color: var(--skyblue-bg);
+    position: absolute;
+    top: -25px;
+    left: 50px;
+}
+
+.schedules {
+    position: relative;
+}
+
+.event-date {
+    flex: 0 1 auto;
+    justify-content: center;
+    text-align: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px dashed var(--primary-color);
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.event-feature-img {
+    flex: 0 1 18%;
+}
+
+.event-text {
+    flex: 0 1 52%;
+}
+
+.event-feature-img img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: var(--primary-color);
+    color: #fff!important;
+}
+
+time {
+    display: inline-block;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--primary-color);
+}
+
+.current-active {
+    color: #fff!important;
+}
+
+hr {
+    border: 1.5px dashed var(--primary-color);
+    position: absolute;
+    top: 420px;
+    left: -220px;
+    width: 600px;
+    transform: rotate(90deg);
+}
+
+.event-text p {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
+.our-feature {
+    background-color: var(--skyblue-bg);
+}
+
+.feature-icon {
+    width: 30%;
+}
+
+.feature h5 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+.feature p {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.watch-video {
+    position: relative;
+}
+
+.watch-video img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.play-btn {
+    display: inline-block;
+    width: 7.5rem;
+    height: 7.5rem;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.fa-play {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 48px;
+    padding: 2.25rem 2.5px;
+}
+
+.articles {
+    background-color: var(--skyblue-bg);
+}
+
+.blog img {
+    width: 100%;
+}
+
+.blog h5 {
+    font-size: 1.5rem;
+}
+
+.blog p {
+    margin: 1rem 0;
+}
+
+/* ====================================
+    Footer
+===================================== */
+
+.footer {
+    background-color: var(--blue-bg);
+}
+
+.logo {
+    fill: var(--primary-color);
+}
+
+.footer h5 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.footer a {
+    display: inline-block;
+    margin: 20px 20px 10px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.664);
+}
+
+.fab {
+    font-size: 1.5rem;
+}
+
+.copyright {
+    background-color: var(--dark-blue-color);
+}
+
+small {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+}
+
+/* ====================================
+    Responsive
+===================================== */
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+
+    .flex-col {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col {
+        flex: 0 1 90%;
+    }
+
+    .hamberger-menu {
+        display: initial;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .hero,
+    .about {
+        text-align: center;
+    }
+    
+    .hero-image {
+        order: -1;
+        text-align: center;
+    }
+
+    .box {
+        margin-bottom: 5rem;
+    }
+
+    .quick-links,
+    hr {
+        display: none;
+    }
+
+    .ptb-2 {
+        padding: 0;
+    }
+
+    .ptb-3 {
+        padding: 2rem 0;
+    }
+
+    .schedule {
+        border: 5px solid var(--primary-color);
+        margin-bottom: 2.5rem;
+    }
+
+    .event-date {
+        background-color: var(--primary-color);
+        border: 0;
+        border-radius: 0;
+        flex: 0 1 20%;
+        width: 100%;
+        height: 100%;
+    }
+
+    time {
+        color: #fff;
+    }
+
+    .event-feature-img,
+    .event-text {
+        text-align: center;
+        flex: 0 1 80%;
+    }
+
+    .event-feature-img img {
+        border-radius: 0;
+    }
+    
+    .blog *,
+    .event-text * {
+        margin: 1rem 0;
+    }
+
+    .feature,
+    .blog {
+        padding: 1rem;
+        margin: 2.5rem 0;
+        border: 5px solid var(--primary-color);
+    }
+
+    .play-btn {
+        top: 30%;
+        left: 42%;
+    }
+
+    .copyright {
+        padding: 2rem;
+    }
+
+}
