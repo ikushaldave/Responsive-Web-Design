@@ -278,7 +278,7 @@ time {
 
 hr {
     border: none;
-    border-bottom: 1.5px dashed var(--primary-color);
+    border-bottom: 2px dashed var(--primary-color);
     position: absolute;
     top: 10%;
     left: 80px;
