@@ -54,15 +54,18 @@ body {
 }
 
 .ptb-1 {
-    padding: 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .ptb-2 {
-    padding: 2rem 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .ptb-3 {
-    padding: 3.5rem 0;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
 }
 
 .pt-5 {
@@ -166,7 +169,8 @@ a.nav-btn {
     background-size: cover;
 }
 
-.hamberger-menu {
+.bar,
+#hamberger-menu {
     display: none;
 }
 
@@ -182,10 +186,6 @@ a.nav-btn {
     margin: 2.5rem 0;
     color: rgb(255, 255, 255);
     font-size: 1.35rem;
-}
-
-.hero-image {
-    text-align: right;
 }
 
 .hero-image img {
@@ -277,12 +277,14 @@ time {
 }
 
 hr {
-    border: 1.5px dashed var(--primary-color);
+    border: none;
+    border-bottom: 1.5px dashed var(--primary-color);
     position: absolute;
-    top: 420px;
-    left: -220px;
-    width: 600px;
+    top: 10%;
+    left: 80px;
+    width: 700px;
     transform: rotate(90deg);
+    transform-origin: left;
 }
 
 .event-text p {
@@ -319,21 +321,21 @@ hr {
 }
 
 .play-btn {
-    display: inline-block;
-    width: 7.5rem;
-    height: 7.5rem;
     position: absolute;
-    top: 40%;
-    left: 45%;
-    background-color: #fff;
-    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .fa-play {
-    display: inline-block;
+    background-color: #fff;
+    border-radius: 50%;
     color: var(--primary-color);
     font-size: 48px;
-    padding: 2.25rem 2.5px;
+    padding: 2.25rem;
 }
 
 .articles {
@@ -371,7 +373,7 @@ hr {
 
 .footer a {
     display: inline-block;
-    margin: 20px 20px 10px 0;
+    margin: 1rem 1rem 0.8rem 0;
     font-size: 1.2rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.664);
@@ -410,12 +412,42 @@ small {
         flex: 0 1 90%;
     }
 
-    .hamberger-menu {
-        display: initial;
+    /* Toggle Menu */
+    
+    .nav {
+        display: none;
+    }
+
+    .logo,
+    .bar {
+        position: relative;
+        z-index: 999;
+    }
+
+    .bar {
+        display: inline-block;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    input:checked ~ .nav {
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 111;
+        padding-top: 8rem;
+    }
+
+    input:checked ~ label .fas::before {
+        content: '\f00d';
     }
 
     .nav-item {
-        display: none;
+        margin: 1rem 0;
     }
 
     .hero,
@@ -432,17 +464,18 @@ small {
         margin-bottom: 5rem;
     }
 
-    .quick-links,
     hr {
         display: none;
     }
 
-    .ptb-2 {
-        padding: 0;
+    .schedule.ptb-2 {
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .ptb-3 {
-        padding: 2rem 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
 
     .schedule {
@@ -485,9 +518,12 @@ small {
         border: 5px solid var(--primary-color);
     }
 
-    .play-btn {
-        top: 30%;
-        left: 42%;
+    .footer a {
+        font-size: 1rem;
+    }
+
+    .quick-links > div {
+        text-align: center;
     }
 
     .copyright {
